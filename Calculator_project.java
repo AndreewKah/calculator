@@ -96,7 +96,7 @@ public class Calculator_project {
     }
 
     public static void trigonometry() {
-        System.out.println("Please enter the 2 known side lengths as doubles in this order of opposite, adjacent, and hypotenuse:");
+        System.out.println("Please enter the 2 known side lengths as doubles in the order of opposite, adjacent, and hypotenuse:");
         double num1 = userInput.nextDouble();
         double num2 = userInput.nextDouble();
         System.out.println("Would you like to calculate the angle using tangent, sine, or cosine?");
