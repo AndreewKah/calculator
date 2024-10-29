@@ -94,4 +94,19 @@ public class Calculator_project {
         }
 
     }
+
+    public static void trigonometry() {
+        System.out.println("Please enter the 2 known side lengths as doubles in this order of opposite, adjacent, and hypotenuse:");
+        double num1 = userInput.nextDouble();
+        double num2 = userInput.nextDouble();
+        System.out.println("Would you like to calculate the angle using tangent, sine, or cosine?");
+        String chooseTrig = userInput.nextLine();
+        if (chooseTrig.equals("sine")) {
+            System.out.println("The angle is " + Math.toDegrees(Math.asin(num1/num2)) + "degrees");
+        } else if (chooseTrig.equals("cosine")) {
+            System.out.println("The angle is " + Math.toDegrees(Math.acos(num1/num2)) + "degrees");
+        } else {
+            System.out.println("The angle is " + Math.toDegrees(Math.atan(num1/num2)) + "degrees");
+        }
+    }
 }
