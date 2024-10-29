@@ -27,4 +27,71 @@ public class Calculator_project {
         System.out.println("Please input the diameter of the circle as a double:");
         System.out.println(userInput.nextDouble() * Math.PI);
     }
+    // I will make it more effective with arrays later if we have time
+    public static void incometax(int salary){
+
+        double tax_rate = 5.06;
+        double total_tax = 0;
+        int leftover = salary;
+        if (leftover >= 47937){
+            tax_rate = 5.06;
+            total_tax += 47937 * (tax_rate / 100);
+            leftover -= 47937;
+        }
+        else {
+            tax_rate = 5.06;
+            total_tax += leftover * (tax_rate / 100);
+        }
+        if (leftover >= 47938){
+            tax_rate = 7.70;
+            total_tax += 47938 * (tax_rate / 100);
+            leftover -= 47938;
+        }
+        else {
+            tax_rate = 7.70;
+            total_tax += leftover * (tax_rate / 100);
+        }
+        if (leftover >= 14201){
+            tax_rate = 10.50;
+            total_tax += 14201 * (tax_rate / 100);
+            leftover -= 14201;
+        }
+        else {
+            tax_rate = 10.50;
+            total_tax += leftover * (tax_rate / 100);
+        }
+        if (leftover >= 23588){
+            tax_rate = 12.29;
+            total_tax += 14201 * (tax_rate / 100);
+            leftover -= 14201;
+        }
+        else {
+            tax_rate = 12.29;
+            total_tax += leftover * (tax_rate / 100);
+        }
+        if (leftover >= 47568){
+            tax_rate = 14.70;
+            total_tax += 47568 * (tax_rate / 100);
+            leftover -= 47568;
+        }
+        else {
+            tax_rate = 14.70;
+            total_tax += leftover * (tax_rate / 100);
+        }
+        if (leftover >= 71520){
+            tax_rate = 16.80;
+            total_tax += 71520 * (tax_rate / 100);
+            leftover -= 71520;
+        }
+        else {
+            tax_rate = 16.80;
+            total_tax += leftover * (tax_rate / 100);
+        }
+        if (leftover >= 0){
+            tax_rate = 20.50;
+            total_tax += leftover * (tax_rate / 100);
+            leftover -= leftover;
+        }
+
+    }
 }
