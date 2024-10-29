@@ -18,7 +18,7 @@ public class Calculator_project {
             System.out.println("Please input the length of the 2 legs as doubles:");
             System.out.println("The length of the hypotenuse is " + Math.sqrt(Math.pow(userInput.nextDouble(), 2) + Math.pow(userInput.nextDouble(), 2)));
         } else {
-            System.out.println("Please input the length of the hypotenuse and 1 leg as doubles::");
+            System.out.println("Please input the length of the hypotenuse and 1 leg as doubles:");
             System.out.println("The length of the remaining side is " + Math.sqrt(Math.pow(userInput.nextDouble(), 2) - Math.pow(userInput.nextDouble(), 2)));
         }
     }
