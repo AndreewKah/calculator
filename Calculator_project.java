@@ -186,4 +186,10 @@ public class Calculator_project {
             return Math.sqrt(num);
         }
     }
+    public static void horizonDistance() {
+        System.out.println("Please enter the radius of the planet and height above sea level in meters as doubles:");
+        double radius = userInput.nextDouble();
+        double height = userInput.nextDouble();
+        System.out.println("You are " + Math.sqrt(2*radius*height) + "meters from the horizon");
+    }
 }
