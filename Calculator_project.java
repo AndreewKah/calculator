@@ -2,9 +2,31 @@ import java.util.*;
 
 public class Calculator_project {
     public static void main(String[]args){
-        // pythagorean theorem, tan cos sin, circles
-        
-        // BMI and nutrition requirements
+        List<Runnable> methods = new ArrayList<>();
+        methods.add(() -> circleCircumference());
+        methods.add(() -> incometax());
+        methods.add(() -> pythagoreanTheorem());
+        methods.add(() -> trigonometry());
+        methods.add(() -> quadraticFormula());
+        methods.add(() -> horizonDistance());
+
+        Scanner UI = new Scanner(System.in);
+        boolean run = true;
+
+        while (run) {
+            System.out.println("What would you like to do? Options: (type in a number)");
+            System.out.println("1: circle circumference; 2: calculate your taxes;\n3: use the pythagorean theorem; 4: trigonometry\n5: Use the quadratic formula; 6: Calculate the horizon distance");
+            int choice = UI.nextInt();
+            if (choice > 10 || choice <0){
+                System.out.println("Invalid option!");
+            }
+            else {
+                methods.get(choice).run();
+            }
+            if (choice == 0){
+                run = false;
+            }
+        }
     }
     public static void BMIcalculator(int kg, int height){
         double BMI = kg/(Math.pow(height,2));
