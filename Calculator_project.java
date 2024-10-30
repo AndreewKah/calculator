@@ -28,11 +28,16 @@ public class Calculator_project {
         System.out.println(userInput.nextDouble() * Math.PI);
     }
     // I will make it more effective with arrays later if we have time
-    public static void incometax(int salary){
+    public static void incometax(){
+        Scanner UI = new Scanner(System.in);
+        System.out.println("What is your salary?");
+        int salary = UI.nextInt();
+        UI.nextLine();
 
         double tax_rate = 5.06;
         double total_tax = 0;
         int leftover = salary;
+        int federal_leftover = salary;
         if (leftover >= 47937){
             tax_rate = 5.06;
             total_tax += 47937 * (tax_rate / 100);
@@ -41,6 +46,16 @@ public class Calculator_project {
         else {
             tax_rate = 5.06;
             total_tax += leftover * (tax_rate / 100);
+        }
+        if (federal_leftover >= 55867){
+            tax_rate = 15.00;
+            total_tax += 55867 * (tax_rate / 100);
+            federal_leftover -= 55867;
+        }
+        else{
+            tax_rate = 15.00;
+            total_tax += federal_leftover * (tax_rate / 100);
+            federal_leftover -= federal_leftover;
         }
         if (leftover >= 47938){
             tax_rate = 7.70;
@@ -51,6 +66,16 @@ public class Calculator_project {
             tax_rate = 7.70;
             total_tax += leftover * (tax_rate / 100);
         }
+        if (federal_leftover >= 55866){
+            tax_rate = 20.5;
+            total_tax += 55866 * (tax_rate / 100);
+            federal_leftover -= 55866;
+        }
+        else{
+            tax_rate = 20.5;
+            total_tax += federal_leftover * (tax_rate / 100);
+            federal_leftover -= federal_leftover;
+        }
         if (leftover >= 14201){
             tax_rate = 10.50;
             total_tax += 14201 * (tax_rate / 100);
@@ -60,14 +85,35 @@ public class Calculator_project {
             tax_rate = 10.50;
             total_tax += leftover * (tax_rate / 100);
         }
+        if (federal_leftover >= 61472){
+            tax_rate = 26;
+            total_tax += 61472 * (tax_rate / 100);
+            federal_leftover -= 61472;
+        }
+        else{
+            tax_rate = 26;
+            total_tax += federal_leftover * (tax_rate / 100);
+            federal_leftover -= federal_leftover;
+        }
         if (leftover >= 23588){
             tax_rate = 12.29;
             total_tax += 14201 * (tax_rate / 100);
             leftover -= 14201;
         }
+
         else {
             tax_rate = 12.29;
             total_tax += leftover * (tax_rate / 100);
+        }
+        if (federal_leftover >= 73547){
+            tax_rate = 29;
+            total_tax += 73547 * (tax_rate / 100);
+            federal_leftover -= 73547;
+        }
+        else{
+            tax_rate = 29;
+            total_tax += federal_leftover * (tax_rate / 100);
+            federal_leftover -= federal_leftover;
         }
         if (leftover >= 47568){
             tax_rate = 14.70;
@@ -92,9 +138,14 @@ public class Calculator_project {
             total_tax += leftover * (tax_rate / 100);
             leftover -= leftover;
         }
+        if (federal_leftover >= 0){
+            tax_rate = 33.0;
+            total_tax += federal_leftover * (tax_rate / 100);
+            federal_leftover -= federal_leftover;
+        }
 
+        System.out.println("Your total tax is " + Math.round(total_tax) + " dollars, you have " + Math.round(salary-total_tax) + " left over");
     }
-
     public static void trigonometry() {
         System.out.println("Please enter the 2 known side lengths as doubles in the order of opposite, adjacent, and hypotenuse:");
         double num1 = userInput.nextDouble();
