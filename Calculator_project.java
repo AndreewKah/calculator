@@ -160,4 +160,30 @@ public class Calculator_project {
             System.out.println("The angle is " + Math.toDegrees(Math.atan(num1/num2)) + "degrees");
         }
     }
+    public static void quadraticFormula() {
+        System.out.println("Please enter a, b, and c as doubles:");
+        double a = userInput.nextDouble();
+        double b = userInput.nextDouble();
+        double c = userInput.nextDouble();
+        System.out.print("Possible solutions are ");
+        try {
+            System.out.print((-b + sqrtCheck(Math.pow(b, 2) - 4*a*c))/2*a);
+        } catch (ArithmeticException e) {
+            System.out.print(e.getMessage());
+        }
+        System.out.print(" and ");
+        try {
+            System.out.println((-b - sqrtCheck(Math.pow(b, 2) - 4*a*c))/2*a);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static double sqrtCheck(double num) {
+        if (num < 0) {
+            throw new ArithmeticException("[Sqrt negative number error]");
+        } else {
+            return Math.sqrt(num);
+        }
+    }
 }
