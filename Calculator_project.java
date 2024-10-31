@@ -63,9 +63,12 @@ public class Calculator_project {
         if (chooseSide.equals("hypotenuse")) {
             System.out.println("Please input the length of the 2 legs as doubles:");
             System.out.println("The length of the hypotenuse is " + Math.sqrt(Math.pow(userInput.nextDouble(), 2) + Math.pow(userInput.nextDouble(), 2)));
-        } else {
+        } else if (chooseSide.equals("leg")){
             System.out.println("Please input the length of the hypotenuse and 1 leg as doubles:");
             System.out.println("The length of the remaining side is " + Math.sqrt(Math.pow(userInput.nextDouble(), 2) - Math.pow(userInput.nextDouble(), 2)));
+        } else {
+            System.out.println("Input not valid, please try again");
+            pythagoreanTheorem();
         }
     }
 
@@ -205,14 +208,18 @@ public class Calculator_project {
         System.out.println("Please enter the 2 known side lengths as doubles in the order of opposite, adjacent, and hypotenuse:");
         double num1 = userInput.nextDouble();
         double num2 = userInput.nextDouble();
+        userInput.nextLine();
         System.out.println("Would you like to calculate the angle using tangent, sine, or cosine?");
         String chooseTrig = userInput.nextLine();
         if (chooseTrig.equals("sine")) {
             System.out.println("The angle is " + Math.toDegrees(Math.asin(num1/num2)) + "degrees");
         } else if (chooseTrig.equals("cosine")) {
             System.out.println("The angle is " + Math.toDegrees(Math.acos(num1/num2)) + "degrees");
-        } else {
+        } else if (chooseTrig.equals("tangent")){
             System.out.println("The angle is " + Math.toDegrees(Math.atan(num1/num2)) + "degrees");
+        } else {
+            System.out.println("Input not valid, please try again");
+            trigonometry();
         }
     }
     public static void quadraticFormula() {
