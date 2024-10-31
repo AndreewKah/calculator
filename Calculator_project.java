@@ -4,7 +4,7 @@ public class Calculator_project {
     static Scanner userInput = new Scanner(System.in);
     static boolean run = true;
     public static void main(String[]args){
-// dictionary
+// making a dictionary with the words and functions
         HashMap<String, Runnable> methods_dict = new HashMap<>();
         methods_dict.put("circle circumference", Calculator_project::circleCircumference);
         methods_dict.put("calculate income tax", Calculator_project::incometax);
@@ -19,7 +19,7 @@ public class Calculator_project {
         methods_dict.put("calculate BMI", Calculator_project::BMIcalculator);
 
         Scanner UI = new Scanner(System.in);
-
+        // main menu loop
         while (run) {
             System.out.println();
             System.out.println("What would you like to do? Options: (type in exactly as written in the desctription)");
@@ -34,6 +34,7 @@ public class Calculator_project {
         }
     
     }
+    // calculate BMI
     public static void BMIcalculator(){
         System.out.println("what is your weight in kg?");
         int kg = userInput.nextInt();
@@ -77,6 +78,7 @@ public class Calculator_project {
         System.out.println("Please input the diameter of the circle as a double:");
         System.out.println(userInput.nextDouble() * Math.PI);
     }
+    // calculate income taxes
     public static void incometax(){
         System.out.println("What is your salary?");
         int salary = userInput.nextInt();
@@ -86,6 +88,7 @@ public class Calculator_project {
         double total_tax = 0;
         int leftover = salary;
         int federal_leftover = salary;
+        // if leftover >= needed num then add to total and leftover-=needed num, else add the taxed remainder to total
         if (leftover >= 47937){
             tax_rate = 5.06;
             total_tax += 47937 * (tax_rate / 100);
