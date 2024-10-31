@@ -6,12 +6,12 @@ public class Calculator_project {
 
         // dictionary
         HashMap<String, Runnable> methods_dict = new HashMap<>();
-        methods_dict.put("circle circumference", calculator::circleCircumference);
-        methods_dict.put("calculate income tax", calculator::incometax);
-        methods_dict.put("pythagorean theorem", calculator::pythagoreanTheorem);
-        methods_dict.put("trigonometry", calculator::trigonometry);
-        methods_dict.put("quadratic formula", calculator::quadraticFormula);
-        methods_dict.put("horizon distance", calculator::horizonDistance);
+        methods_dict.put("circle circumference", Calculator_project::circleCircumference);
+        methods_dict.put("calculate income tax", Calculator_project::incometax);
+        methods_dict.put("pythagorean theorem", Calculator_project::pythagoreanTheorem);
+        methods_dict.put("trigonometry", Calculator_project::trigonometry);
+        methods_dict.put("quadratic formula", Calculator_project::quadraticFormula);
+        methods_dict.put("horizon distance", Calculator_project::horizonDistance);
 //        List<Runnable> methods = new ArrayList<>();
 
 
