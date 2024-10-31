@@ -3,9 +3,7 @@ import java.util.*;
 public class Calculator_project {
     static Scanner userInput = new Scanner(System.in);
     public static void main(String[]args){
-
-
-        // dictionary
+// dictionary
         HashMap<String, Runnable> methods_dict = new HashMap<>();
         methods_dict.put("circle circumference", Calculator_project::circleCircumference);
         methods_dict.put("calculate income tax", Calculator_project::incometax);
@@ -13,6 +11,9 @@ public class Calculator_project {
         methods_dict.put("trigonometry", Calculator_project::trigonometry);
         methods_dict.put("quadratic formula", Calculator_project::quadraticFormula);
         methods_dict.put("horizon distance", Calculator_project::horizonDistance);
+        methods_dict.put("calculate triangle area", Calculator_project::triangleArea);
+        methods_dict.put("use stewart's theorem", Calculator_project::stewartsTheorem);
+        methods_dict.put("calculate electricity bill", Calculator_project::electricitybill);
 
 
         Scanner UI = new Scanner(System.in);
@@ -20,7 +21,7 @@ public class Calculator_project {
 
         while (run) {
             System.out.println("What would you like to do? Options: (type in exactly as written in the desctription)");
-            System.out.println("circle circumference; calculate income tax\npythagorean theorem; trigonometry\nquadratic formula; horizon distance");
+            System.out.println("circle circumference; calculate income tax\npythagorean theorem; trigonometry\nquadratic formula; horizon distance\ncalculate triangle area; use stewart's theorem\ncalculate electricity bill");
             String choice = UI.nextLine();
             boolean exists = methods_dict.containsKey(choice);
             if (exists) {
@@ -29,6 +30,7 @@ public class Calculator_project {
                 System.out.println("I do not know what \"" +choice+ "\" is, please try again");
             }
         }
+    
     }
     public static void BMIcalculator(int kg, int height){
         double BMI = kg/(Math.pow(height,2));
@@ -243,5 +245,24 @@ public class Calculator_project {
         double n = userInput.nextDouble();
         double s = m + n;
         System.out.println("The length of AD is " + Math.sqrt((Math.pow(AB, 2)*n + Math.pow(AC, 2)*m - m*n*s)/s));
+    }
+    public static void electricitybill(){
+        System.out.println("How many days have passed since you last paid your electricity bill?");
+        int lastPaid = userInput.nextInt()%62;
+        System.out.println("How many kilowatts do you use every day?");
+        double dailyuse = userInput.nextDouble();
+        double totalKW = lastPaid*dailyuse;
+        double total = lastPaid * 0.2253;
+        if (totalKW > 1376){
+            totalKW-=1376;
+            total += 1376*0.1097;
+        }
+        else {
+            total += totalKW*0.1097;
+            totalKW-=totalKW;
+        }
+        total += totalKW*0.1408;
+        totalKW-=totalKW;
+        System.out.println("Your total electricity bill is: " + total + " dollars");
     }
 }
