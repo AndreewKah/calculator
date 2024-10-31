@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class Calculator_project {
+    static Scanner userInput = new Scanner(System.in);
     public static void main(String[]args){
 
 
