@@ -233,4 +233,14 @@ public class Calculator_project {
         double s = (a + b + c)/2;
         System.out.println("The area of this triangle is " + Math.sqrt(s*(s-a)*(s-b)*(s-c)));
     }
+    public static void stewartsTheorem() {
+        System.out.println("For a triangle with apex A, base BC, and point D lying on base BC:");
+        System.out.println("Enter AB, AC, and the lengths of the base to the left and right of D as doubles");
+        double AB = userInput.nextDouble();
+        double AC = userInput.nextDouble();
+        double m = userInput.nextDouble();
+        double n = userInput.nextDouble();
+        double s = m + n;
+        System.out.println("The length of AD is " + Math.sqrt((Math.pow(AB, 2)*n + Math.pow(AC, 2)*m - m*n*s)/s));
+    }
 }
