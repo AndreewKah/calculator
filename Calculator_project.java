@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Calculator_project {
     static Scanner userInput = new Scanner(System.in);
+    static boolean run = true;
     public static void main(String[]args){
 // dictionary
         HashMap<String, Runnable> methods_dict = new HashMap<>();
@@ -14,10 +15,9 @@ public class Calculator_project {
         methods_dict.put("calculate triangle area", Calculator_project::triangleArea);
         methods_dict.put("use stewart's theorem", Calculator_project::stewartsTheorem);
         methods_dict.put("calculate electricity bill", Calculator_project::electricitybill);
-
+        methods_dict.put("quit", Calculator_project::quit);
 
         Scanner UI = new Scanner(System.in);
-        boolean run = true;
 
         while (run) {
             System.out.println("What would you like to do? Options: (type in exactly as written in the desctription)");
@@ -264,5 +264,8 @@ public class Calculator_project {
         total += totalKW*0.1408;
         totalKW-=totalKW;
         System.out.println("Your total electricity bill is: " + total + " dollars");
+    }
+    public static void quit(){
+        run = false;
     }
 }
