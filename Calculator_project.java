@@ -13,7 +13,6 @@ public class Calculator_project {
         methods_dict.put("trigonometry", Calculator_project::trigonometry);
         methods_dict.put("quadratic formula", Calculator_project::quadraticFormula);
         methods_dict.put("horizon distance", Calculator_project::horizonDistance);
-//        List<Runnable> methods = new ArrayList<>();
 
 
         Scanner UI = new Scanner(System.in);
