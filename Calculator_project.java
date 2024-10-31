@@ -16,12 +16,13 @@ public class Calculator_project {
         methods_dict.put("use stewart's theorem", Calculator_project::stewartsTheorem);
         methods_dict.put("calculate electricity bill", Calculator_project::electricitybill);
         methods_dict.put("quit", Calculator_project::quit);
+        methods_dict.put("calculate BMI", Calculator_project::BMIcalculator);
 
         Scanner UI = new Scanner(System.in);
 
         while (run) {
             System.out.println("What would you like to do? Options: (type in exactly as written in the desctription)");
-            System.out.println("circle circumference; calculate income tax\npythagorean theorem; trigonometry\nquadratic formula; horizon distance\ncalculate triangle area; use stewart's theorem\ncalculate electricity bill");
+            System.out.println("circle circumference; calculate income tax\npythagorean theorem; trigonometry\nquadratic formula; horizon distance\ncalculate triangle area; use stewart's theorem\ncalculate electricity bill, calculate BMI, quit");
             String choice = UI.nextLine();
             boolean exists = methods_dict.containsKey(choice);
             if (exists) {
@@ -32,9 +33,28 @@ public class Calculator_project {
         }
     
     }
-    public static void BMIcalculator(int kg, int height){
+    public static void BMIcalculator(){
+        System.out.println("what is your weight in kg?");
+        int kg = userInput.nextInt();
+        userInput.nextLine();
+        System.out.println("what is your height in meters?");
+        double height = userInput.nextDouble();
+
         double BMI = kg/(Math.pow(height,2));
-        
+        String category = "";
+        if (BMI >= 30){
+            category = "obese";
+        }
+        if (BMI >= 25 && BMI < 30){
+            category = "overweight";
+        }
+        if (BMI >= 18.5 && BMI < 25){
+            category = "normal weight";
+        }
+        if (BMI<18.5){
+            category = "underweight";
+        }
+        System.out.println("Your BMI is: " + BMI + ", which is considered " + category);
     }
 
     public static void pythagoreanTheorem() {
@@ -53,7 +73,6 @@ public class Calculator_project {
         System.out.println("Please input the diameter of the circle as a double:");
         System.out.println(userInput.nextDouble() * Math.PI);
     }
-    // I will make it more effective with arrays later if we have time
     public static void incometax(){
         System.out.println("What is your salary?");
         int salary = userInput.nextInt();
