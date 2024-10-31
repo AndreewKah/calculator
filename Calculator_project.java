@@ -13,18 +13,29 @@ public class Calculator_project {
         Scanner UI = new Scanner(System.in);
         boolean run = true;
 
+        // dictionary
+        HashMap<String, Runnable> methods_dict = new HashMap<>();
+        methods_dict.put("circle circumference", calculator::circleCircumference);
+        methods_dict.put("calculate income tax", calculator::incometax);
+        methods_dict.put("pythagorean theorem", calculator::pythagoreanTheorem);
+        methods_dict.put("trigonometry", calculator::trigonometry);
+        methods_dict.put("quadratic formula", calculator::quadraticFormula);
+        methods_dict.put("horizon distance", calculator::horizonDistance);
+//        List<Runnable> methods = new ArrayList<>();
+
+
+        Scanner UI = new Scanner(System.in);
+        boolean run = true;
+
         while (run) {
-            System.out.println("What would you like to do? Options: (type in a number)");
-            System.out.println("1: circle circumference; 2: calculate your taxes;\n3: use the pythagorean theorem; 4: trigonometry\n5: Use the quadratic formula; 6: Calculate the horizon distance");
-            int choice = UI.nextInt();
-            if (choice > 10 || choice <0){
-                System.out.println("Invalid option!");
-            }
-            else {
-                methods.get(choice).run();
-            }
-            if (choice == 0){
-                run = false;
+            System.out.println("What would you like to do? Options: (type in exactly as written in the desctription)");
+            System.out.println("circle circumference; calculate income tax\npythagorean theorem; trigonometry\nquadratic formula; horizon distance");
+            String choice = UI.nextLine();
+            boolean exists = methods_dict.containsKey(choice);
+            if (exists) {
+                methods_dict.get(choice).run();
+            } else {
+                System.out.println("I do not know what \"" +choice+ "\" is, please try again");
             }
         }
     }
