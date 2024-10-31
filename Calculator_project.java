@@ -2,16 +2,7 @@ import java.util.*;
 
 public class Calculator_project {
     public static void main(String[]args){
-        List<Runnable> methods = new ArrayList<>();
-        methods.add(() -> circleCircumference());
-        methods.add(() -> incometax());
-        methods.add(() -> pythagoreanTheorem());
-        methods.add(() -> trigonometry());
-        methods.add(() -> quadraticFormula());
-        methods.add(() -> horizonDistance());
 
-        Scanner UI = new Scanner(System.in);
-        boolean run = true;
 
         // dictionary
         HashMap<String, Runnable> methods_dict = new HashMap<>();
@@ -62,10 +53,9 @@ public class Calculator_project {
     }
     // I will make it more effective with arrays later if we have time
     public static void incometax(){
-        Scanner UI = new Scanner(System.in);
         System.out.println("What is your salary?");
-        int salary = UI.nextInt();
-        UI.nextLine();
+        int salary = userInput.nextInt();
+        userInput.nextLine();
 
         double tax_rate = 5.06;
         double total_tax = 0;
@@ -79,6 +69,7 @@ public class Calculator_project {
         else {
             tax_rate = 5.06;
             total_tax += leftover * (tax_rate / 100);
+            leftover-=leftover;
         }
         if (federal_leftover >= 55867){
             tax_rate = 15.00;
@@ -94,10 +85,13 @@ public class Calculator_project {
             tax_rate = 7.70;
             total_tax += 47938 * (tax_rate / 100);
             leftover -= 47938;
+
         }
         else {
             tax_rate = 7.70;
             total_tax += leftover * (tax_rate / 100);
+            leftover-=leftover;
+
         }
         if (federal_leftover >= 55866){
             tax_rate = 20.5;
@@ -117,11 +111,13 @@ public class Calculator_project {
         else {
             tax_rate = 10.50;
             total_tax += leftover * (tax_rate / 100);
+            leftover-=leftover;
         }
         if (federal_leftover >= 61472){
             tax_rate = 26;
             total_tax += 61472 * (tax_rate / 100);
             federal_leftover -= 61472;
+
         }
         else{
             tax_rate = 26;
@@ -137,6 +133,7 @@ public class Calculator_project {
         else {
             tax_rate = 12.29;
             total_tax += leftover * (tax_rate / 100);
+            leftover-=leftover;
         }
         if (federal_leftover >= 73547){
             tax_rate = 29;
@@ -156,6 +153,7 @@ public class Calculator_project {
         else {
             tax_rate = 14.70;
             total_tax += leftover * (tax_rate / 100);
+            leftover-=leftover;
         }
         if (leftover >= 71520){
             tax_rate = 16.80;
@@ -165,6 +163,7 @@ public class Calculator_project {
         else {
             tax_rate = 16.80;
             total_tax += leftover * (tax_rate / 100);
+            leftover-=leftover;
         }
         if (leftover >= 0){
             tax_rate = 20.50;
@@ -177,7 +176,9 @@ public class Calculator_project {
             federal_leftover -= federal_leftover;
         }
 
+
         System.out.println("Your total tax is " + Math.round(total_tax) + " dollars, you have " + Math.round(salary-total_tax) + " left over");
+
     }
     public static void trigonometry() {
         System.out.println("Please enter the 2 known side lengths as doubles in the order of opposite, adjacent, and hypotenuse:");
