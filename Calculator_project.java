@@ -21,6 +21,7 @@ public class Calculator_project {
         Scanner UI = new Scanner(System.in);
 
         while (run) {
+            System.out.println();
             System.out.println("What would you like to do? Options: (type in exactly as written in the desctription)");
             System.out.println("circle circumference; calculate income tax\npythagorean theorem; trigonometry\nquadratic formula; horizon distance\ncalculate triangle area; use stewart's theorem\ncalculate electricity bill, calculate BMI, quit");
             String choice = UI.nextLine();
