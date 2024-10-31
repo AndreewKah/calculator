@@ -225,4 +225,12 @@ public class Calculator_project {
         double height = userInput.nextDouble();
         System.out.println("You are " + Math.sqrt(2*radius*height) + "meters from the horizon");
     }
+    public static void triangleArea() {
+        System.out.println("Please enter the 3 side lengths of the triangle as doubles:");
+        double a = userInput.nextDouble();
+        double b = userInput.nextDouble();
+        double c = userInput.nextDouble();
+        double s = (a + b + c)/2;
+        System.out.println("The area of this triangle is " + Math.sqrt(s*(s-a)*(s-b)*(s-c)));
+    }
 }
