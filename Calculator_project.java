@@ -59,7 +59,7 @@ public class Calculator_project {
         System.out.println("Your BMI is: " + BMI + ", which is considered " + category);
     }
 
-    public static void pythagoreanTheorem() {
+    public static void pythagoreanTheorem() { // Calculates either the hypotenuse or leg
         System.out.println("Would you like to calculate the hypotenuse or leg?");
         String chooseSide = userInput.nextLine();
         if (chooseSide.equals("hypotenuse")) {
@@ -74,7 +74,7 @@ public class Calculator_project {
         }
     }
 
-    public static void circleCircumference() {
+    public static void circleCircumference() { // Calculates circumference of a circle
         System.out.println("Please input the diameter of the circle as a double:");
         System.out.println(userInput.nextDouble() * Math.PI);
     }
@@ -208,7 +208,7 @@ public class Calculator_project {
         System.out.println("Your total tax is " + Math.round(total_tax) + " dollars, you have " + Math.round(salary-total_tax) + " left over");
 
     }
-    public static void trigonometry() {
+    public static void trigonometry() { // Calculates an angle using 2 known side lengths
         System.out.println("Please enter the 2 known side lengths as doubles in the order of opposite, adjacent, and hypotenuse:");
         double num1 = userInput.nextDouble();
         double num2 = userInput.nextDouble();
@@ -226,7 +226,7 @@ public class Calculator_project {
             trigonometry();
         }
     }
-    public static void quadraticFormula() {
+    public static void quadraticFormula() { // Calculates real solutions to quadratic equations
         System.out.println("Please enter a, b, and c as doubles:");
         double a = userInput.nextDouble();
         double b = userInput.nextDouble();
@@ -245,20 +245,20 @@ public class Calculator_project {
         }
     }
 
-    public static double sqrtCheck(double num) {
+    public static double sqrtCheck(double num) { // Makes sure negative numbers are not square rooted, throw ArithmeticException otherwise
         if (num < 0) {
             throw new ArithmeticException("[Sqrt negative number error]");
         } else {
             return Math.sqrt(num);
         }
     }
-    public static void horizonDistance() {
+    public static void horizonDistance() { // Calculates distance to visible horizon
         System.out.println("Please enter the radius of the planet and height above sea level in meters as doubles:");
         double radius = userInput.nextDouble();
         double height = userInput.nextDouble();
         System.out.println("You are " + Math.sqrt(2*radius*height) + "meters from the horizon");
     }
-    public static void triangleArea() {
+    public static void triangleArea() { // Calculates area of triangle using 3 side lengths
         System.out.println("Please enter the 3 side lengths of the triangle as doubles:");
         double a = userInput.nextDouble();
         double b = userInput.nextDouble();
@@ -266,7 +266,7 @@ public class Calculator_project {
         double s = (a + b + c)/2;
         System.out.println("The area of this triangle is " + Math.sqrt(s*(s-a)*(s-b)*(s-c)));
     }
-    public static void stewartsTheorem() {
+    public static void stewartsTheorem() { // Calculates length of line from apex of triangle to point on base
         System.out.println("For a triangle with apex A, base BC, and point D lying on base BC:");
         System.out.println("Enter AB, AC, and the lengths of the base to the left and right of D as doubles");
         double AB = userInput.nextDouble();
