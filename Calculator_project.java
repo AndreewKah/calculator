@@ -44,6 +44,7 @@ public class Calculator_project {
 
         double BMI = kg/(Math.pow(height,2));
         String category = "";
+        // determine the category
         if (BMI >= 30){
             category = "obese";
         }
@@ -276,6 +277,7 @@ public class Calculator_project {
         double s = m + n;
         System.out.println("The length of AD is " + Math.sqrt((Math.pow(AB, 2)*n + Math.pow(AC, 2)*m - m*n*s)/s));
     }
+    // calculates the electricity bill depending on the daily voltage use
     public static void electricitybill(){
         System.out.println("How many days have passed since you last paid your electricity bill?");
         int lastPaid = userInput.nextInt()%62;
@@ -283,6 +285,7 @@ public class Calculator_project {
         double dailyuse = userInput.nextDouble();
         double totalKW = lastPaid*dailyuse;
         double total = lastPaid * 0.2253;
+        // first 1376 KW cost less than the rest
         if (totalKW > 1376){
             totalKW-=1376;
             total += 1376*0.1097;
@@ -295,6 +298,7 @@ public class Calculator_project {
         totalKW-=totalKW;
         System.out.println("Your total electricity bill is: " + total + " dollars");
     }
+    // quit function
     public static void quit(){
         run = false;
     }
